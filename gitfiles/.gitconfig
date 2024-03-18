@@ -1,0 +1,9 @@
+[user]
+	email = pattonsgirl@gmail.com
+	name = Kayleigh Duncan
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[commit]
+	template = /home/kduncan/.gitmessage.txt

@@ -37,7 +37,9 @@ if [[ "$(id -u)" -eq 0 ]]; then
 	else
 		echo "apt is not installed at the specified location."
 	fi
-		# install packages with apt
+	ln -s /home/$ME/.gitconfig ~/.gitconfig 	
+	ln -s /home/$ME/.gitmessage.txt ~/.gitmessage.txt
+	
 else
 	echo "Script is not running as root, exiting..." 1>&2
 	exit 1
