@@ -9,24 +9,7 @@ if [ -f ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc.backup
 fi
 
-# Create a new .vimrc file with Vundle configuration
-cat > ~/.vimrc <<EOF
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" Vundle settings
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Add your plugins here
-Plugin 'VundleVim/Vundle.vim'
-
-call vundle#end()
-filetype plugin indent on    " required
-EOF
-
 echo "Vundle has been successfully installed"
-rm ~/.vimrc
 echo "Removed Vundle default vimrc"
 ln -s ~/dotfiles/vimrc ~/.vimrc
 echo "Replaced with repo vimrc"
