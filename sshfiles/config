@@ -1,6 +1,7 @@
 Host fry
 	User w010ked
 	HostName fry.cs.wright.edu
+	IdentityFile /home/kduncan/.ssh/id_ed25519
 	Port 22
 
 #ssh -i keys/ceg3120key.pem ubuntu@54.205.152.158

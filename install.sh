@@ -55,6 +55,7 @@ if [[ "$(id -u)" -eq 0 ]]; then
 	ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc
 	# moving ssh files
 	ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
+	ln -s /home/$ME/dotfiles/sshfiles/authorized_keys /home/$ME/.ssh/authorized_keys
 	# decided to make vim / Vundle it's own thing
 	#bash vundle-install.sh
 	#ln -s /home/$ME/dotfiles/vimrc /home/$ME/.vimrc
