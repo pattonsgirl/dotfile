@@ -13,3 +13,5 @@ Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on    " required
+
+colorscheme jellybeans
