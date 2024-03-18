@@ -52,7 +52,13 @@ if [[ "$(id -u)" -eq 0 ]]; then
 	ln -s /home/$ME/dotfiles/gitfiles/.gitconfig /home/$ME/.gitconfig
 	ln -s /home/$ME/dotfiles/gitfiles/.gitmessage.txt /home/$ME/.gitmessage.txt
 	# moving bashrc
-	ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc	
+	ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc
+	# moving ssh files
+	ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
+	# decided to make vim / Vundle it's own thing
+	#bash vundle-install.sh
+	#ln -s /home/$ME/dotfiles/vimrc /home/$ME/.vimrc
+	#vim +PluginInstall +qall	
 else
 	echo "Script is not running as root, exiting..." 1>&2
 	exit 1

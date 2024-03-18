@@ -1,0 +1,72 @@
+Host fry
+	User w010ked
+	HostName fry.cs.wright.edu
+	Port 22
+
+#ssh -i keys/ceg3120key.pem ubuntu@54.205.152.158
+
+Host start3120
+	User ubuntu
+	HostName 54.205.152.158
+	IdentityFile /home/kduncan/keys/ceg3120key.pem
+	Port 22
+
+Host panda
+	User git
+	HostName 54.205.152.158
+	IdentityFile /home/kduncan/.ssh/aws-git
+
+
+Host p1ceg3120
+	User ec2-user
+	HostName 3.91.111.59
+	IdentityFile /home/kduncan/keys/ceg3120key.pem
+	Port 22
+	
+#ssh -i keys/ceg2410.pem ubuntu@52.70.19.50
+Host ceg2410
+	User ubuntu
+	HostName 52.70.19.50
+	IdentityFile /home/kduncan/keys/ceg2410.pem
+	Port 22
+# ssh -i /home/kduncan/keys/ceg2350key.pem ubuntu@54.156.21.216
+Host ceg2350
+	User ubuntu
+	HostName 54.156.21.216
+	IdentityFile /home/kduncan/keys/ceg2350key.pem
+	Port 22
+
+Host proxy
+	User ubuntu
+	HostName 44.213.173.146
+	IdentityFile /home/kduncan/keys/ceg3120key.pem
+
+#ssh -i keys/ceg3120key.pem ubuntu@3.233.254.2
+Host starter
+	User ubuntu
+	Hostname 3.233.254.2
+	IdentityFile /home/kduncan/keys/ceg3120key.pem
+	Port 22
+
+#"ssh -i keys/aws-git" git clone git@3.233.254.2
+Host starter2
+	User git
+	Hostname 3.233.254.2
+	IdentityFile /home/kduncan/keys/aws-git
+	Port 22
+
+# ssh -i keys/ceg3120key.pem ubuntu@duncanhub.io
+Host duncanhub.io
+	#User
+	Hostname duncanhub.io
+	IdentityFile /home/kduncan/keys/aws-git
+
+# ssh -i keys/ceg3120key.pem ubuntu@34.225.117.138
+# ssh -i keys/ceg3120key.pem ec2-user@34.194.88.240
+Host lb
+	User ec2-user
+	Hostname 34.194.88.240
+	IdentityFile /home/kduncan/keys/ceg3120key.pem
+
+
+
