@@ -17,7 +17,6 @@ if [[ "$(id -u)" -eq 0 ]]; then
 			libgl1-mesa-glx \
 			libegl1-mesa \
 			libxrandr2 \
-			libxrandr2 \
 			libxss1 \
 			libxcursor1 \
 			libxcomposite1 \
@@ -37,9 +36,23 @@ if [[ "$(id -u)" -eq 0 ]]; then
 	else
 		echo "apt is not installed at the specified location."
 	fi
-	ln -s /home/$ME/.gitconfig ~/.gitconfig 	
-	ln -s /home/$ME/.gitmessage.txt ~/.gitmessage.txt
 	
+	if [[ -e $(ls awsdl/awscliv2.zip 2> /dev/null | head -1) ]]; then
+		echo "AWS CLI V2 installer found, running it"
+		unzip awsdl/awscliv2.zip -d awsdl/
+		./awsdl/aws/install 
+	else
+		mkdir awsdl
+		curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awsdl/awscliv2.zip"
+		unzip awsdl/awscliv2.zip -d awsdl/
+		./awsdl/aws/install
+	fi 
+
+	# moving git files
+	ln -s /home/$ME/dotfiles/gitfiles/.gitconfig /home/$ME/.gitconfig
+	ln -s /home/$ME/dotfiles/gitfiles/.gitmessage.txt /home/$ME/.gitmessage.txt
+	# moving bashrc
+	ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc	
 else
 	echo "Script is not running as root, exiting..." 1>&2
 	exit 1
